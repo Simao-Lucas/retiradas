@@ -48,7 +48,7 @@ class RetiradaController extends Controller
 
         $retirada->documento = $documentos;
         $retirada->save();
-        return redirect('/');
+        return redirect("/retiradas/identificaSecretario/{$retirada->id}");
     }
 
     /**
@@ -81,5 +81,20 @@ class RetiradaController extends Controller
     public function destroy(Retirada $retirada)
     {
         //
+    }
+
+    public function identifica_secretario($id){
+        $retirada = Retirada::where('id',$id)->first();
+        
+        return view('retiradas.identifica_sec',[
+            'retirada'=> $retirada
+        ]);
+    }
+
+    public function cadastra_secretario(UpdateRetiradaRequest $request,$id){
+        $retirada = Retirada::where('id',$id)->first();
+        $retirada->secretario = $request->secretario;
+        $retirada->update();
+        return redirect('/fim');
     }
 }

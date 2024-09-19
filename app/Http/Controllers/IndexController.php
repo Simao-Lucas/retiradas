@@ -10,4 +10,9 @@ class IndexController extends Controller
         return view("welcome");
     }
 
+    public function fim(){
+        auth()->logout();
+        return view("fim");
+    }
+
 }
