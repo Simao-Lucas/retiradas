@@ -13,15 +13,17 @@ return new class extends Migration
     {
         Schema::create('retiradas', function (Blueprint $table) {
             $table->id();
-            $table->integer('codpes')->nullable();
-            $table->string('nome_prop')->nullable();
-            $table->boolean('retirado_prop')->default(TRUE);
-            $table->string('nome_rec')->nullable();
-            $table->string('cpf_rec')->nullable();
-            $table->integer('codpes_rec')->nullable();
-            $table->boolean('login_senhaU')->default(TRUE);
             $table->string('documento');
-            $table->string('secretario')->nullable();
+
+            $table->unsignedBigInteger('interessado')->nullable();
+            $table->foreign('interessado')->references('id')->on('users');
+
+            $table->unsignedBigInteger('receptor')->nullable();
+            $table->foreign('receptor')->references('id')->on('receptors');
+
+            $table->string('atendente')->nullable();
+            $table->string('aut_receptor')->nullable();
+            $table->string('aut_atendente')->nullable();
             $table->timestamps();
         });
     }

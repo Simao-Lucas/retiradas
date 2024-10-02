@@ -5,7 +5,7 @@
     A ideia é fazer com que essa página faça o reconhecimento facial do secretário que irá fazer a entrega do documento.
     <br><br>
 
-    <form method="POST" action="/retiradas/identificaSecretario/{{$retirada->id}}">
+    <form method="POST" action="/identificaSecretario">
     @csrf
     @method('patch')
 

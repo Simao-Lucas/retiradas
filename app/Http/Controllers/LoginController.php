@@ -43,10 +43,10 @@ class LoginController extends Controller
         // bind do dados retornados
         $user->codpes = $userSenhaUnica->codpes;
         $user->email = $userSenhaUnica->email;
-        $user->name = $userSenhaUnica->nompes;
+        $user->nomepes = $userSenhaUnica->nompes;
         $user->save();
         auth()->login($user, true);
-        return redirect('/retiradas/create');
+        return redirect('/identificaSecretario');
     }
 
 }

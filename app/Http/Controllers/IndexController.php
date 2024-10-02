@@ -15,4 +15,8 @@ class IndexController extends Controller
         return view("fim");
     }
 
+    public function escolheId(){
+        return view("users.escolheId");
+    }
+
 }

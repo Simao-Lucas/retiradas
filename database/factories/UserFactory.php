@@ -28,7 +28,7 @@ class UserFactory extends Factory
         $codpes = $this->faker->unique()->servidor;
         return [
             'codpes' => $codpes,
-            'name' => Pessoa::nomeCompleto($codpes),
+            'nomepes' => Pessoa::nomeCompleto($codpes),
             'email' => Pessoa::email($codpes),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),

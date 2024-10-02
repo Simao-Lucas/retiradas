@@ -1,4 +1,4 @@
-<select name = "secretario">
+<select name = "atendente">
     <option value="Henrique"> Henrique </option>
     <option value="Katia"> Katia </option>
     <option value="Luiza"> Luiza </option>
